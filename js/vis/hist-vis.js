@@ -222,6 +222,7 @@ HistVis.prototype.generateTooltips = function() {
 
     vis.tip = d3.tip()
         .attr("class", "d3-tip")
+        .attr("class", "scatter-tip")
         .offset([-10,0])
         .html(function (d){
 
@@ -231,7 +232,7 @@ HistVis.prototype.generateTooltips = function() {
 
             var str = "";
 
-            str += "<h4>Planet: " + planet.PlanetIdentifier + "</h4>";
+            str += "<h3 class='scatter-tip-title'>Planet: " + planet.PlanetIdentifier + "</h3>";
 
             if (planet.PlanetaryMassJpt) {
                 str += "<p>Mass: " + (planet.PlanetaryMassJpt * 317.8).toFixed(1) + " Earth Masses";

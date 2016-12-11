@@ -466,6 +466,10 @@ a {
   display: inline-block;
 }
 
+.closeuptext {
+  padding-top:5px;
+}
+
 #closeup-vis {
   margin-top: 100px;
   margin-left: -100px;
@@ -554,4 +558,28 @@ h3 {
 #timeline-chart {
   width: 600px;
   height: 500px;
+  fill:black;
+}
+
+.scatter-tip {
+  font-size: 12px;
+  padding:5px;
+  border-radius: 2px;
+  background-color: rgb(175,175,175);
+}
+
+.scatter-tip-title {
+  color:rgb(50,50,50);
+  font-size:14px
+}
+
+
+.spaceship-line {
+  fill: none;
+  stroke: white;
+  stroke-width: 1.5px;
+}
+
+.tooltip-circle {
+  fill: #96AB96;
 }

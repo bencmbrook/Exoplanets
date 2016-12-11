@@ -55,7 +55,7 @@ TimelineVis.prototype.initVis = function () {
 
 //d3 tip
     vis.tip = d3.tip()
-        .attr("class", "d3-tip")
+        .attr("class", "scatter-tip")
         .offset([-10, 0])
         .html(function(d) {
             return  "Planets Discovered in " + formatDate(d.key) + ": " + d.values;
@@ -128,7 +128,8 @@ TimelineVis.prototype.updateVisualization = function () {
     //append path
     vis.lineSvg.append("path")
         .attr("class", "line")
-        .attr("fill","blue");
+        .attr("stroke","rgb(175,175,175)")
+        .attr("stroke-width",1);
 
     //update line
     vis.svg.select(".line")
@@ -150,10 +151,26 @@ TimelineVis.prototype.updateVisualization = function () {
         .transition()                  //TRANSIITON
         .duration(800)
         .call(vis.xAxis);
+
+    vis.svg.select(".x-axis")
+        .append("text")
+        .attr("class","ax-label")
+        .attr("x", vis.width / 2 - 10)
+        .attr("y", 50)
+        .text("Year");
+
     vis.svg.select(".y-axis")
         .transition()                  //TRANSIITON
         .duration(800)
         .call(vis.yAxis);
+
+    vis.svg.select(".y-axis")
+        .append("text")
+        .attr("class","ax-label")
+        .attr("y", -50)
+        .attr("x", -220)
+        .text("Number of Planets Discovered")
+        .attr("transform", "rotate(-90)");
 
 
     //tooltip circle

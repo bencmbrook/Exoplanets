@@ -40,6 +40,8 @@ function loadData() {
 
     timelineChart = new TimelineVis($("#timeline-chart"), data);
 
+    spaceshipvis = new SpaceshipVis($("#spaceship-area"), data);
+
     closeUp = new CloseUp($("#closeup-vis"), data);
 
     histVis = new HistVis($("#hist-vis"), data);
