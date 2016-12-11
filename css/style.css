@@ -550,3 +550,8 @@ h3 {
 #firsthead {
   margin-top: 7%;
 }
+
+#timeline-chart {
+  width: 600px;
+  height: 500px;
+}

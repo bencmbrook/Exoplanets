@@ -162,7 +162,7 @@ CloseUp.prototype.updateSelection = function(selection) {
       planetData.SemiMajorAxisAU ? "Orbital Radius: " + planetData.SemiMajorAxisAU.toFixed(3) + "AU" : ""
     );
 
-    $("#wiki").html( '<a target="_target", href="' + getWiki[selection] + '">' + 'Wiki Page </a>' );
+    $("#wiki").html( '<a target="_target" href="' + getWiki[selection] + '">' + 'Wiki Page </a>' );
 
   } else {
     $("#planetname").text( "Generic Host Star" );

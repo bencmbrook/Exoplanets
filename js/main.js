@@ -13,7 +13,7 @@ function loadData() {
 
   d3.csv("data/oec-modified.csv", function(data){
 
-    data.forEach( function(d){
+    data.forEach(function(d){
         d.SemiMajorAxisAU = +d.SemiMajorAxisAU;
         d.PlanetaryMassJpt = +d.PlanetaryMassJpt;
         d.LongitudeDeg = +d.LongitudeDeg;
@@ -38,16 +38,16 @@ function loadData() {
     // first 100 planet objects
     radialChart = new RadialChart($("#radial-chart"), data, selectionHandler);
 
-    // timelineChart = new TimelineVis($("#timeline-chart"), data);
+    timelineChart = new TimelineVis($("#timeline-chart"), data);
 
     closeUp = new CloseUp($("#closeup-vis"), data);
 
     histVis = new HistVis($("#hist-vis"), data);
 
     var button = document.getElementById('updateButton');
-    // button.addEventListener('click', function () {
-    //     timelineChart.updateVisualization();
-    // });
+    button.addEventListener('click', function () {
+        timelineChart.updateVisualization();
+    });
 
     $(selectionHandler).bind("selectionChanged", function(e, planet){
       closeUp.updateSelection(planet);

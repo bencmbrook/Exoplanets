@@ -76,13 +76,13 @@
       <video id="video2" src="https://exoplanets.nasa.gov/interactable/11/vid/transit_method_single_planet.mp4" autoplay="true" loop="true"></video>
       <p>DIMMING STARS</p>
     </div>
-    <p class="credit">Credit: <a href="https://exoplanets.nasa.gov/interactable/11/", target="_blank">NASA Exoplanet Exploration</a></p>
+    <p class="credit">Credit: <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">NASA Exoplanet Exploration</a></p>
 	</section><!-- cd-section -->
 
 	<section id="section3" class="cd-section">
     <h2>Rapid Discoveries</h2>
 		<p class="subhead">With this and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
-    <div id="timeline-chart" class="section vis1">
+    <div id="timeline-chart" class="middle">
        <button id="updateButton" class="btn bg-primary">Refresh</button>
        <div id="slider-area"> </div>
        <p id="event-start"></p>
@@ -93,7 +93,7 @@
 	<section id="section4" class="cd-section">
     <h2>All Exoplanets</h2>
     <p class="subhead">The physical properties of all 3313 exoplanets</p>
-    <div id="hist-vis" class="vis1">
+    <div id="hist-vis">
       <div class="selectors">
         <h5>Select X-Axis Category</h5>
         <select class="form-control select" id="scat-xCategory" onchange="histVis.wrangleData()">
@@ -133,7 +133,7 @@
 
     <div class="left">
       <!-- Vis 1 ORBIT -->
-      <div id="radial-chart" class="vis1" onclick="radialChart.startStopVis()"></div>
+      <div id="radial-chart" onclick="radialChart.startStopVis()"></div>
     </div>
     <div class="right">
       <!-- <p>Scientists have identified 10 planets that are most likely to be habitable. Here's how they compare to Earth.</p> -->
@@ -158,7 +158,7 @@
 	<section id="section6" class="cd-section">
     <h2>A Long Journey</h2>
     <p class="subhead">To reach any of these planets, we'll need to build much faster spaceships.</p>
-    <div id="timeline-chart"></div>
+
   </section><!-- cd-section -->
 
 <!-- Load JS libraries -->
@@ -174,7 +174,7 @@
 <script src="js/lib/nouislider.min.js"></script>
 
 <script src="js/vis/radial-vis.js"></script>
-<!-- <script src="js/vis/timeline-vis.js"></script> -->
+<script src="js/vis/timeline-vis.js"></script>
 <script src="js/vis/hist-vis.js"></script>
 <script src="js/vis/closeup-vis.js"></script>
 <script src="js/main.js"></script>
