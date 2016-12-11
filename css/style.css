@@ -379,7 +379,7 @@ My CSS
 .cd-section h2 {
   position: relative;
   margin-left: 50%;
-  margin-top: 6%;
+  margin-top: 3%;
   bottom: auto;
   right: auto;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -501,6 +501,52 @@ h3 {
 }
 
 #hist-vis {
-  width: 400px;
-  height: 400px;
+  margin-top: 15px;
+  width: 800px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.selectors {
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: white;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    fill:white;
+    font-size: 11px;
+}
+
+.select {
+  border-style: solid;
+  border-width: medium;
+  border-color: white;
+  width: 200px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: white;
+  font-size: 15px;
+  height: 40px;
+  padding: 5px 8px 5px 8px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  background: transparent url(../img/down-arrow.svg) no-repeat 165px center;
+  background-size: 20px;
+  margin-top: 5px;
+}
+
+#firsthead {
+  margin-top: 7%;
 }
