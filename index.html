@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+	<title>Vertical Fixed Navigation</title>
+</head>
+<body>
+	<nav id="cd-vertical-nav">
+		<ul>
+			<li>
+				<a href="#section1" data-number="1">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Life</span>
+				</a>
+			</li>
+			<li>
+				<a href="#section2" data-number="2">
+					<span class="cd-dot"></span>
+					<span class="cd-label">What are Exoplanets?</span>
+				</a>
+			</li>
+			<li>
+				<a href="#section3" data-number="3">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Rapid Discoveries</span>
+				</a>
+			</li>
+      <li>
+        <a href="#section4" data-number="4">
+          <span class="cd-dot"></span>
+          <span class="cd-label">All Exoplanets</span>
+        </a>
+      </li>
+			<li>
+				<a href="#section5" data-number="5">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Earthlike Planets</span>
+				</a>
+			</li>
+			<li>
+				<a href="#section6" data-number="6">
+					<span class="cd-dot"></span>
+					<span class="cd-label">A Long Journey</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<a class="cd-nav-trigger cd-img-replace">Open navigation<span></span></a>
+
+	<section id="section1" class="cd-section">
+    <div class="box">
+	    <h1><strong>EXOPLANETS</strong><br>The Search for<br> New Worlds</h1>
+    </div>
+		<a href="#section2" class="cd-scroll-down cd-img-replace">scroll down</a>
+	</section><!-- cd-section -->
+
+	<section id="section2" class="cd-section">
+    <h2>What are Exoplanets?</h2>
+		<p class="subhead">
+      An exoplanet, or extrasolar planet, is a planet that orbits a star other than the Sun.
+    </p>
+    <p class="subhead">
+      Astromers discover them by looking for stars that wobble or dim periodically.
+    </p>
+    <div class="middle">
+      <video src="https://exoplanets.nasa.gov/interactable/11/vid/radial_velocity.mp4" autoplay="true" loop="true"></video>
+      <p>WOBBLING STARS</p>
+      <video id="video2" src="https://exoplanets.nasa.gov/interactable/11/vid/transit_method_single_planet.mp4" autoplay="true" loop="true"></video>
+      <p>DIMMING STARS</p>
+    </div>
+	</section><!-- cd-section -->
+
+	<section id="section3" class="cd-section">
+		<p class="p-center">With this and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
+	</section><!-- cd-section -->
+
+	<section id="section4" class="cd-section">
+		<p class="p-center">Scientists have identified 10 planets that are most likely to be habitable. Here's how they compare to Earth.</p>
+	</section><!-- cd-section -->
+
+	<section id="section5" class="cd-section">
+    <h2>Earthlike Planets</h2>
+    <div class="left">
+      <!-- Vis 1 ORBIT -->
+      <div id="radial-chart" class="vis1" onclick="radialChart.startStopVis()"></div>
+    </div>
+    <div class="right">
+      <!-- <p>Scientists have identified 10 planets that are most likely to be habitable. Here's how they compare to Earth.</p> -->
+      <!-- CLOSE UP VIS -->
+      <div class="closeup">
+        <div id="closeup-vis"></div>
+        <div id="closeup-info">
+          <h3 id="planetname">Earth</h3>
+          <h5 id="temperature" class="closeuptext">Temperature</h5>
+          <h5 id="perioddays" class="closeuptext">Length of Year</h5>
+          <h5 id="mass" class="closeuptext">Planetary Mass</h5>
+          <h5 id="radius" class="closeuptext">Planetary Radius</h5>
+          <h5 id="period" class="closeuptext">Orbital Period</h5>
+          <h5 id="orbrad" class="closeuptext">Orbital Radius</h5>
+        </div>
+      </div>
+    </div>
+	</section><!-- cd-section -->
+
+	<section id="section6" class="cd-section">
+
+  </section><!-- cd-section -->
+
+<!-- Load JS libraries -->
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/queue.min.js"></script>
+<script src="js/lib/topojson.js"></script>
+<script src="js/lib/d3.min.js"></script>
+<script src="js/lib/d3.tip.js"></script>
+<script src="js/lib/d3.layout.orbit.js"></script>
+<!-- <script src="js/lib/bootstrap.min.js"></script> -->
+<script src="js/lib/parallax.min.js"></script>
+<script src="js/lib/three.min.js"></script>
+<script src="js/lib/nouislider.min.js"></script>
+
+<script src="js/vis/radial-vis.js"></script>
+<!-- <script src="js/vis/timeline-vis.js"></script> -->
+<script src="js/vis/hist-vis.js"></script>
+<script src="js/vis/closeup-vis.js"></script>
+<script src="js/main.js"></script>
+<script src="js/theme.js"></script>
+
+<script type="text/javascript" src="plugins/sphere/requestanimationframe.polyfill.js"></script>
+<script type="text/javascript" src="plugins/jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="plugins/jquery.ui/jquery-ui.min.js"></script>
+<!-- <script type="text/javascript" src="js/rotate/sphere-hacked.js"></script>
+<script type="text/javascript" src="js/rotate/jquery.earth-3d.js"></script>
+<script type="text/javascript" src="js/rotate/demo.js"></script> -->
+
+</body>
+</html>
