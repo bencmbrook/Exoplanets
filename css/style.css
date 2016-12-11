@@ -487,3 +487,20 @@ h3 {
   width: 600px;
   height: 600px
 }
+
+.credit {
+  font-size: 10pt !important;
+  margin-left: 10%;
+  margin-top: 30px;
+  color: #777 !important;
+}
+
+.credit a {
+  color: #777 !important;
+  text-decoration: none;
+}
+
+#hist-vis {
+  width: 400px;
+  height: 400px;
+}

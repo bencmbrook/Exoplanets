@@ -161,7 +161,7 @@ RadialChart.prototype.updateVis = function(){
         .revolution(function(d) {
             return 1 / d.period;
           })
-        .speed(2);
+        .speed(1);
 
     vis.svg
         .append("g")

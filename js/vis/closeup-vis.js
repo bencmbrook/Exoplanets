@@ -113,6 +113,19 @@ CloseUp.prototype.updateSelection = function(selection) {
 
   vis.material.map = THREE.ImageUtils.loadTexture('img/skins/'+selection+'.jpg');
 
+  var getWiki = {
+    "Earth" : "https://en.wikipedia.org/wiki/Earth",
+    "Alpha Centauri B c" : "https://en.wikipedia.org/wiki/Alpha_Centauri#Alpha_Centauri_Bc",
+    "Gliese 667 C c" : "https://en.wikipedia.org/wiki/Gliese_667_Cc",
+    "Kepler-442 b" : "https://en.wikipedia.org/wiki/Kepler-442b",
+    "Kepler-452 b" : "https://en.wikipedia.org/wiki/Kepler-452b",
+    "Wolf 1061 c" : "https://en.wikipedia.org/wiki/Wolf_1061c",
+    "Kepler-1229 b" : "https://en.wikipedia.org/wiki/Kepler-1229b",
+    "Kapteyn b" : "https://en.wikipedia.org/wiki/Kapteyn_b",
+    "Kepler-62 f" : "https://en.wikipedia.org/wiki/Kepler-62f",
+    'Kepler-186 f' : "https://en.wikipedia.org/wiki/Kepler-186f"
+  };
+
   if (selection !== "root") {
 
     $("#planetname").text( selection );
@@ -148,6 +161,8 @@ CloseUp.prototype.updateSelection = function(selection) {
     $("#orbrad").text(
       planetData.SemiMajorAxisAU ? "Orbital Radius: " + planetData.SemiMajorAxisAU.toFixed(3) + "AU" : ""
     );
+
+    $("#wiki").html( '<a target="_target", href="' + getWiki[selection] + '">' + 'Wiki Page </a>' );
 
   } else {
     $("#planetname").text( "Generic Host Star" );

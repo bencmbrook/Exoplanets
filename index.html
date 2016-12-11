@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
-	<title>Vertical Fixed Navigation</title>
+	<title>EXOPLANETS</title>
 </head>
 <body>
 	<nav id="cd-vertical-nav">
@@ -76,10 +76,43 @@
       <video id="video2" src="https://exoplanets.nasa.gov/interactable/11/vid/transit_method_single_planet.mp4" autoplay="true" loop="true"></video>
       <p>DIMMING STARS</p>
     </div>
+    <p class="credit">Credit: <a href="https://exoplanets.nasa.gov/interactable/11/", target="_blank">NASA Exoplanet Exploration</a></p>
 	</section><!-- cd-section -->
 
 	<section id="section3" class="cd-section">
-		<p class="p-center">With this and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
+		<p class="subhead">With this and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
+    <div id="hist-vis" class="vis1">
+      <div class="selectors">
+        <h5>Select X-Axis Category</h5>
+        <select class="form-control" id="scat-xCategory" onchange="histVis.wrangleData()">
+          <option value="PlanetaryMassJpt">Planetary Mass</option>
+          <option value="RadiusJpt">Planetary Radius</option>
+          <option value="PeriodDays">Orbital Period</option>
+          <option value ="SurfaceTempK">Surface Temperature</option>
+          <option value="SemiMajorAxisAU">Orbital Radius</option>
+        </select>
+      </div>
+      <div class="selectors">
+        <h5>Select Radius Category</h5>
+        <select class="form-control" id="scat-radiusCategory" onchange="histVis.wrangleData()">
+          <option value="RadiusJpt">Planetary Radius</option>
+          <option value ="SurfaceTempK">Surface Temperature</option>
+          <option value="PeriodDays">Orbital Period</option>
+          <option value="PlanetaryMassJpt">Planetary Mass</option>
+          <option value="SemiMajorAxisAU">Orbital Radius</option>
+        </select>
+      </div>
+      <div class="selectors">
+        <h5>Select Y-Axis Category</h5>
+        <select class="form-control" id="scat-yCategory" onchange="histVis.wrangleData()">
+          <option value ="SurfaceTempK">Surface Temperature</option>
+          <option value="RadiusJpt">Planetary Radius</option>
+          <option value="PlanetaryMassJpt">Planetary Mass</option>
+          <option value="PeriodDays">Orbital Period</option>
+          <option value="SemiMajorAxisAU">Orbital Radius</option>
+        </select>
+      </div>
+    </div>
 	</section><!-- cd-section -->
 
 	<section id="section4" class="cd-section">
@@ -105,10 +138,12 @@
           <h5 id="radius" class="closeuptext">Planetary Radius</h5>
           <h5 id="period" class="closeuptext">Orbital Period</h5>
           <h5 id="orbrad" class="closeuptext">Orbital Radius</h5>
+          <h5 id="wiki" class="closeuptext">Wiki Link</h5>
         </div>
       </div>
     </div>
 	</section><!-- cd-section -->
+  <p class="credit">Solar systems are overlaid. Planet surfaces are artistic interpretations.</a></p>
 
 	<section id="section6" class="cd-section">
 
