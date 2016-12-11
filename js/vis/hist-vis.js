@@ -6,6 +6,7 @@ HistVis = function(_parentElement, _parentData){
     this.parentElement = _parentElement;
     this.parentData = _parentData;
     this.displayData = [];
+    this.tip;
 
     this.initVis();
 };
@@ -16,9 +17,9 @@ HistVis.prototype.initVis = function () {
 
     // SVG drawing area
 
-    vis.margin = {top: 25, right: 40, bottom: 60, left: 60};
+    vis.margin = {top: 25, right: 40, bottom: 50, left: 80};
 
-    vis.width = 600 - vis.margin.left - vis.margin.right;
+    vis.width = 800 - vis.margin.left - vis.margin.right;
     vis.height = 500 - vis.margin.top - vis.margin.bottom;
 
     vis.svg = d3.select(vis.parentElement.selector).append("svg")
@@ -29,30 +30,33 @@ HistVis.prototype.initVis = function () {
 
     // scales
     vis.xScale = d3.scale.linear()
-        .rangeRound([0, vis.width]);
+        .rangeRound([20, vis.width]);
 
     vis.yScale = d3.scale.linear()
-        .range([vis.height, 0]);
+        .range([vis.height, 20]);
 
-    //axis
+    vis.radiusScale = d3.scale.linear()
+        .range([1, 20]);
+
+    // x-axis
     vis.xAxis = d3.svg.axis()
         .scale(vis.xScale)
         .orient("bottom");
+
+    // y-axis
+    vis.yAxis = d3.svg.axis()
+        .scale(vis.yScale)
+        .orient("left");
+
 
     vis.svg.append("g")
         .attr("class", "x-axis axis")
         .attr("transform", "translate(0," + vis.height + ")");
 
+    vis.svg.append("g")
+        .attr("class", "y-axis axis")
+        .attr("transform", "translate(0,0)");
 
-//d3 tip
-//     vis.tip = d3.tip()
-//         .attr("class", "d3-tip")
-//         .offset([-10, 0])
-//         .html(function(d) {
-//             return  "Planets Discovered in " + formatDate(d.key) + ": " + d.values;
-//         });
-//
-//     vis.svg.call(vis.tip);
 
     //define clipping
     vis.svg.append("defs").append("clipPath")
@@ -70,48 +74,69 @@ HistVis.prototype.wrangleData = function() {
 
     var vis = this;
 
-    vis.category = d3.select("#hist-category").property("value");
+    vis.xCategory = d3.select("#scat-xCategory").property("value");
+    vis.yCategory = d3.select("#scat-yCategory").property("value");
+    vis.radCategory = d3.select("#scat-radiusCategory").property("value");
 
     // get data specific to category
     vis.catData = vis.parentData.map(function(d){
 
-        var raw = +d[vis.category];
+        var xRaw = +d[vis.xCategory];
+        var yRaw = +d[vis.yCategory];
+        var radRaw = +d[vis.radCategory];
 
-        var converted;
+        var xConverted;
+        var yConverted;
+        var radConverted;
 
         // convert to appropriate units
-        if (vis.category == "PlanetaryMassJpt") {
+        if (vis.xCategory == "PlanetaryMassJpt") {
             // earth masses
-            converted = raw * 317.8;
-        } else if (vis.category == "RadiusJpt") {
+            xConverted = xRaw * 317.8;
+        } else if (vis.xCategory == "RadiusJpt") {
             // earth radii
-            converted = raw * 11.209;
-        } else if (vis.category == "PeriodDays") {
-            // period in years
-            converted = raw / 365.0;
+            xConverted = xRaw * 11.209;
         } else {
-            converted = raw;
+            xConverted = xRaw;
         }
+
+        // convert to appropriate units
+        if (vis.yCategory == "PlanetaryMassJpt") {
+            // earth masses
+            yConverted = yRaw * 317.8;
+        } else if (vis.xCategory == "RadiusJpt") {
+            // earth radii
+            yConverted = yRaw * 11.209;
+        } else {
+            yConverted = yRaw;
+        }
+
+        // convert to appropriate units
+        if (vis.radCategory == "PlanetaryMassJpt") {
+            // earth masses
+            radConverted = radRaw * 317.8;
+        } else if (vis.xCategory == "RadiusJpt") {
+            // earth radii
+            radConverted = radRaw * 11.209;
+        } else {
+            radConverted = radRaw;
+        }
+
+        var converted = {
+            planet : d.PlanetIdentifier,
+            xCat : convertCategory(vis.xCategory),
+            yCat : convertCategory(vis.yCategory),
+            radCat : convertCategory(vis.radCategory),
+            x : xConverted,
+            y : yConverted,
+            rad: radConverted
+        };
 
         return converted;
     });
 
-    if (vis.category == "PlanetaryMassJpt") {
-        // earth masses
-        $("#hist-x-label").text("Planetary Mass (in Earth Masses)");
-    } else if (vis.category == "RadiusJpt") {
-        // earth radii
-        $("#hist-x-label").text("Planetary Radius (in Earth Radii)");
-    } else if (vis.category == "PeriodDays") {
-        // earth radii
-        $("#hist-x-label").text("Orbital Period (Years)");
-    } else {
-        // earth radii
-        $("#hist-x-label").text("Orbital Radius (AU)");
-    }
-
     vis.nonNullData = vis.catData.filter(function(d){
-        return (d !== 0 && d < 10000);
+        return (d.x != 0 && d.y != 0 && d.rad != 0);
     });
 
     vis.displayData = vis.nonNullData;
@@ -123,44 +148,119 @@ HistVis.prototype.updateVisualization = function () {
 
     var vis = this;
 
+    vis.svg.selectAll("text").remove();
 
+    vis.generateTooltips();
 
-    vis.xScale.domain([d3.min(vis.displayData),d3.max(vis.displayData)]);
+    vis.xScale.domain([0, d3.max(vis.displayData, function(d){
+        return d.x;
+    })]);
 
-    vis.bins = d3.layout.histogram()
-        .bins(vis.xScale.ticks(30))
-        (vis.displayData);
+    vis.yScale.domain([0,d3.max(vis.displayData, function (d){
+        return d.y;
+    })]);
 
-    vis.yScale.domain([0, d3.max(vis.bins, function(d) { return d.length; })]);
+    vis.radiusScale.domain([0,d3.max(vis.displayData, function (d){
+        return d.rad;
+    })]);
 
-    console.log(vis.bins);
+    vis.dot = vis.svg.selectAll(".dot")
+        .data(vis.displayData, function(d){return d.planet});
 
+    vis.dot
+        .enter().append("circle")
+        .attr("class", "dot")
+        .attr("fill","rgba(185,185,185, 0.5)")
+        .attr("stroke", "rgb(185,185,185)")
+        .attr("r", function(d){
+            return vis.radiusScale(d.rad);
+        })
+        .attr("cx", function(d){
+            return vis.xScale(d.x)})
+        .attr("cy", function(d){return vis.yScale(d.y)})
+        .on("mouseover", vis.tip.show)
+        .on("mouseout", vis.tip.hide);
 
-    vis.bar = vis.svg.selectAll(".bar")
-        .data(vis.bins, function(d){ return d.x; });
+    vis.dot
+        .transition(400)
+        .attr("r", function(d){
+            return vis.radiusScale(d.rad);
+        })
+        .attr("cx", function(d){
+            return vis.xScale(d.x)})
+        .attr("cy", function(d){return vis.yScale(d.y)});
 
-    vis.bar
-        .enter().append("g")
-        .attr("class", "bar")
-        .attr("transform", function(d) { return "translate(" + vis.xScale(d.x) + "," + vis.yScale(d.y) + ")"; });
-
-    vis.bar
-        .attr("transform", function(d) { return "translate(" + vis.xScale(d.x) + "," + vis.yScale(d.y) + ")"; })
-        .transition()
-        .duration(1000)
-        .attr("height", function(d) { return vis.height - vis.yScale(d.y); });
-
-    vis.bar.exit().remove();
-
-    vis.bar.append("rect")
-        .attr("x", 1)
-        .attr("width", vis.xScale(vis.bins[0].dx - vis.xScale(0)) - 1)
-        .attr("height", function(d) { return vis.height - vis.yScale(d.length); })
-        .attr("fill", "rgb(200,200,200)");
+    vis.dot.exit().remove();
 
     vis.svg.select(".x-axis")
-        .attr("transform", "translate(0," + vis.height + ")")
         .call(vis.xAxis);
 
+    vis.svg.select(".x-axis")
+        .append("text")
+        .attr("x", vis.width / 2 - 10)
+        .attr("y", 50)
+        .text(convertCategory(vis.xCategory));
 
+    vis.svg.select(".y-axis")
+        .call(vis.yAxis);
+
+    vis.svg.select(".y-axis")
+        .append("text")
+        .attr("y", -50)
+        .attr("x", -220)
+        .text(convertCategory(vis.yCategory))
+        .attr("transform", "rotate(-90)");
+
+};
+
+HistVis.prototype.generateTooltips = function() {
+
+    var vis = this;
+
+    vis.tip = d3.tip()
+        .attr("class", "d3-tip")
+        .offset([-10,0])
+        .html(function (d){
+
+            var planet = vis.parentData.filter(function(d1){
+                return (d1.PlanetIdentifier == d.planet)
+            })[0];
+
+            var str = "";
+
+            str += "<h4>Planet: " + planet.PlanetIdentifier + "</h4>";
+
+            if (planet.PlanetaryMassJpt) {
+                str += "<p>Mass: " + (planet.PlanetaryMassJpt * 317.8).toFixed(1) + " Earth Masses";
+            }
+            if (planet.SurfaceTempK) {
+                str += "<p>Surface Temperature: " + planet.SurfaceTempK.toFixed(0) + " K";
+            }
+            if (planet.RadiusJpt) {
+                str += "<p>Planetary Radius: " + (planet.RadiusJpt * 11.209).toFixed(1) + " Earth Radii";
+            }
+
+            return str;
+        });
+
+    vis.svg.call(vis.tip);
+};
+
+
+function convertCategory(category) {
+    if (category == "PlanetaryMassJpt") {
+        // earth masses
+        return "Mass (in Earth Masses)";
+    } else if (category == "RadiusJpt") {
+        // earth radii
+        return "Radius (in Earth Radii)";
+    } else if (category == "PeriodDays") {
+        return "Orbital Period (Days)";
+    } else if (category == "SurfaceTempK") {
+        return "Surface Temperature (Kelvin)";
+    } else if (category == "AgeGyr") {
+        return "Age (Billions of years)"
+    } else {
+        return "Orbital Radius (AU)";
+    }
 };
