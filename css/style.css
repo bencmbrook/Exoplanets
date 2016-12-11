@@ -462,6 +462,28 @@ a {
   margin-top: 50px;
 }
 
+#closeup-vis, #closeup-info {
+  display: inline-block;
+}
+
 #closeup-vis {
   margin-top: 100px;
+  margin-left: -100px;
+  width: 400px;
+  height: 400px;
+}
+
+#closeup-info {
+  position: absolute;
+  top: 250px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+#radial-chart {
+  width: 600px;
+  height: 600px
 }

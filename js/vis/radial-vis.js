@@ -33,8 +33,8 @@ RadialChart.prototype.initVis = function(){
     // * TO-DO *
     vis.margin = { top: 0, right: 25, bottom: 0, left: 25};
 
-    vis.width = 600 - vis.margin.left - vis.margin.right;
-    vis.height = 600 - vis.margin.top - vis.margin.bottom;
+    vis.width = vis.parentElement.width() - vis.margin.left - vis.margin.right;
+    vis.height = vis.parentElement.height() - vis.margin.top - vis.margin.bottom;
 
     vis.svg = d3.select(vis.parentElement.selector).append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -201,6 +201,7 @@ RadialChart.prototype.updateVis = function(){
         .enter()
         .insert("circle", "g")
         .attr("class", "ring")
+        .attr("opacity", 0)
         .attr("r", function(d) { return d.r; })
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });

@@ -19,8 +19,8 @@ CloseUp.prototype.initVis = function () {
     // SVG drawing area
     vis.margin = {top: 25, right: 40, bottom: 60, left: 60};
 
-    vis.width = 400;
-    vis.height = 400;
+    vis.width = vis.parentElement.width();
+    vis.height = vis.parentElement.height();
 
     // Set up canvas and WebGL renderer
     vis.scene = new THREE.Scene();
