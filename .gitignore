@@ -6,7 +6,10 @@
 *.exe
 *.o
 *.so
-*.idea
+
+# Text Editor #
+###############
+.idea/
 
 # Packages #
 ############
