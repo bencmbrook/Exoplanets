@@ -103,7 +103,7 @@ HistVis.prototype.wrangleData = function() {
         if (vis.yCategory == "PlanetaryMassJpt") {
             // earth masses
             yConverted = yRaw * 317.8;
-        } else if (vis.xCategory == "RadiusJpt") {
+        } else if (vis.yCategory == "RadiusJpt") {
             // earth radii
             yConverted = yRaw * 11.209;
         } else {
@@ -150,6 +150,10 @@ HistVis.prototype.updateVisualization = function () {
     // vis.svg.selectAll("text").remove();
 
     vis.generateTooltips();
+
+    console.log(d3.max(vis.displayData, function (d){
+        return d.y;
+    }));
 
     vis.xScale.domain([0, d3.max(vis.displayData, function(d){
         return d.x;

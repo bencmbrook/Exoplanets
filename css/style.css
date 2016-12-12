@@ -549,6 +549,7 @@ h3 {
   background: transparent url(../img/down-arrow.svg) no-repeat 165px center;
   background-size: 20px;
   margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 #firsthead {
@@ -582,4 +583,8 @@ h3 {
 
 .tooltip-circle {
   fill: #96AB96;
+}
+
+#note {
+  font-size:14px;
 }
