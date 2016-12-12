@@ -2,7 +2,7 @@
 ###### Ben Brook, Matt Deveney, Kenny Okagaki and Hunter Simmons
 ###### Project Website: http://bencmbrook.github.io
 ###### Screencast Video: https://youtu.be/tIVeZnhEXzU
-###### Process Book:
+###### Process Book: https://github.com/bencmbrook/bencmbrook.github.io/blob/master/Process%20Book.pdf
 
 ### Project Overview
 Our project set out to explore the history and current status of exoplanet discovery. We progress from the way exoplanets are discovered, to the characteristics of known exoplanets, to the limitations of current scientific knowledge and the future of exoplanet discovery.
