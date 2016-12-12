@@ -166,7 +166,7 @@ SpaceshipVis.prototype.updateVisualization = function () {
 
     //update line
     vis.svg.select(".spaceship-line")
-        .attr("d", vis.line(vis.nestedData))
+        .attr("d", vis.line(vis.displayData))
         .attr("clip-path", "url(#clip)");
 
 
