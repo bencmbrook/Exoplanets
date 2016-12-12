@@ -630,3 +630,11 @@ i {
 #long-journey {
   padding-bottom: 50px;
 }
+
+#event-start, #event-end {
+  display: inline;
+}
+
+#slider-area {
+  margin: 10px;
+}

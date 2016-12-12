@@ -46,10 +46,16 @@ function loadData() {
 
     histVis = new HistVis($("#hist-vis"), data);
 
-    var button = document.getElementById('updateButton');
-    button.addEventListener('click', function () {
+    // Add mouseup listener to slider handles
+    var handles = $('.noUi-handle');
+    handles[0].addEventListener('mouseup', function () {
         timelineChart.updateVisualization();
     });
+    handles[1].addEventListener('mouseup', function () {
+        timelineChart.updateVisualization();
+    });
+
+    var a = $('#event-start').addEventListener('onchange');
 
     $(selectionHandler).bind("selectionChanged", function(e, planet){
       closeUp.updateSelection(planet);

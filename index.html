@@ -97,19 +97,15 @@
     <h2>Exoplanet Discovery is Accelerating</h2>
 		<p class="subhead">With these and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
     <div id="timeline-chart" class="middle">
-       <button id="updateButton" class="btn bg-primary">Refresh</button>
-        </br>
-        </br>
-        <div id="slider-area" class="noUiSlider"> </div>
-        </br>
-       <p id="event-start"></p>
-       <p id="event-end"></p>
+      <p id="event-start"></p><p style="display:inline"> -</p>
+      <p id="event-end"></p>
+      <div id="slider-area" class="noUiSlider"></div>
     </div>
 	</section><!-- cd-section -->
 
 	<section id="section4" class="cd-section">
     <h2>What are these planets like?</h2>
-    <p class="subhead">Use this scatterplot to explore the physical properties of all 3313 exoplanets!</p>
+    <p class="subhead">Use this scatterplot to explore the physical properties of all 3313 exoplanets</p>
     <div id="hist-vis">
       <div class="selectors">
         <h5>Select X-Axis Category</h5>
@@ -197,12 +193,9 @@
 
 <!-- Load JS libraries -->
 <script src="js/lib/jquery.min.js"></script>
-<script src="js/lib/queue.min.js"></script>
-<script src="js/lib/topojson.js"></script>
 <script src="js/lib/d3.min.js"></script>
 <script src="js/lib/d3.tip.js"></script>
 <script src="js/lib/d3.layout.orbit.js"></script>
-<!-- <script src="js/lib/bootstrap.min.js"></script> -->
 <script src="js/lib/parallax.min.js"></script>
 <script src="js/lib/three.min.js"></script>
 <script src="js/lib/nouislider.min.js"></script>
@@ -215,7 +208,6 @@
 <script src="js/main.js"></script>
 <script src="js/theme.js"></script>
 
-<script type="text/javascript" src="plugins/sphere/requestanimationframe.polyfill.js"></script>
 <script type="text/javascript" src="plugins/jquery/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="plugins/jquery.ui/jquery-ui.min.js"></script>
 
