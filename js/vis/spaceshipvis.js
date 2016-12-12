@@ -208,7 +208,7 @@ SpaceshipVis.prototype.updateVisualization = function () {
         .style("stroke-width", "1px")
         .style("opacity", "0");
 
-    vis.lines = document.getElementsByClassName('line');
+    vis.lines = document.getElementsByClassName('spaceship-line');
 
     vis.mousePerLine = vis.mouseG.selectAll(".mouse-per-line")
         .data(vis.displayData)
@@ -260,6 +260,7 @@ SpaceshipVis.prototype.updateVisualization = function () {
                     while (true){
                         target = Math.floor((beginning + end) / 2);
                         pos = vis.lines[i].getPointAtLength(target);
+                        console.log(pos);
                         if ((target === end || target === beginning) && pos.x !== mouse[0]) {
                             break;
                         }
