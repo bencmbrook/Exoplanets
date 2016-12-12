@@ -169,7 +169,7 @@ TimelineVis.prototype.updateVisualization = function () {
         .attr("clip-path", "url(#clip)");
 
     //update
-    vis.tooltipCircle.attr("r", 4)
+    vis.tooltipCircle.attr("r", 5)
         .transition()
         .duration(800)
         .attr("cx", function (d) {
@@ -193,7 +193,7 @@ function dateSlideCreate() {
     noUiSlider.create(dateSlider, {
         // Create two timestamps to define a range.
         range: {
-            min: timestamp('1931'),
+            min: timestamp('1991'),
             max: timestamp('2017')
         },
 
