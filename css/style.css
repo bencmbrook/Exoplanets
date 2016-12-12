@@ -471,7 +471,7 @@ a {
 }
 
 #closeup-vis {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: -100px;
   width: 400px;
   height: 400px;
@@ -479,7 +479,7 @@ a {
 
 #closeup-info {
   position: absolute;
-  top: 250px;
+  top: 125px;
   line-height: 1.2;
 }
 

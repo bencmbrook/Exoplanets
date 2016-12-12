@@ -52,7 +52,7 @@ SpaceshipVis.prototype.initVis = function () {
          .attr("class", "scatter-tip")
          .offset([-10, 0])
          .html(function(d) {
-             return "<h3 class='scatter-tip-title'>" + d.key + "</h3><br>" + "Distance in Parsec: " + Math.round(d.distance);
+             return "<h3 class='scatter-tip-title'>" + d.key + "</h3><br>" + Math.round(d.distance) + " parsec away";
          });
 
      vis.svg.call(vis.tip);

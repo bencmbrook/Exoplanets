@@ -26,7 +26,7 @@ TimelineVis.prototype.initVis = function () {
     vis.margin = {top: 25, right: 40, bottom: 60, left: 60};
 
     vis.width = 600 - vis.margin.left - vis.margin.right;
-    vis.height = 500 - vis.margin.top - vis.margin.bottom;
+    vis.height = 400 - vis.margin.top - vis.margin.bottom;
 
     vis.svg = d3.select(vis.parentElement.selector).append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
