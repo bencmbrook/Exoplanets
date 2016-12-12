@@ -622,6 +622,6 @@ h3 {
   border: 2px solid #96AB96;
 }
 
-
-
-
+i {
+  text-decoration: underline;
+}
