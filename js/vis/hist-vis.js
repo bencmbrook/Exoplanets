@@ -103,7 +103,7 @@ HistVis.prototype.wrangleData = function() {
         if (vis.yCategory == "PlanetaryMassJpt") {
             // earth masses
             yConverted = yRaw * 317.8;
-        } else if (vis.xCategory == "RadiusJpt") {
+        } else if (vis.yCategory == "RadiusJpt") {
             // earth radii
             yConverted = yRaw * 11.209;
         } else {
@@ -150,6 +150,10 @@ HistVis.prototype.updateVisualization = function () {
     // vis.svg.selectAll("text").remove();
 
     vis.generateTooltips();
+
+    console.log(d3.max(vis.displayData, function (d){
+        return d.y;
+    }));
 
     vis.xScale.domain([0, d3.max(vis.displayData, function(d){
         return d.x;
@@ -222,6 +226,7 @@ HistVis.prototype.generateTooltips = function() {
 
     vis.tip = d3.tip()
         .attr("class", "d3-tip")
+        .attr("class", "scatter-tip")
         .offset([-10,0])
         .html(function (d){
 
@@ -231,7 +236,7 @@ HistVis.prototype.generateTooltips = function() {
 
             var str = "";
 
-            str += "<h4>Planet: " + planet.PlanetIdentifier + "</h4>";
+            str += "<h3 class='scatter-tip-title'>Planet: " + planet.PlanetIdentifier + "</h3>";
 
             if (planet.PlanetaryMassJpt) {
                 str += "<p>Mass: " + (planet.PlanetaryMassJpt * 317.8).toFixed(1) + " Earth Masses";

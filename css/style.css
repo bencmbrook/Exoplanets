@@ -466,8 +466,12 @@ a {
   display: inline-block;
 }
 
+.closeuptext {
+  padding-top:5px;
+}
+
 #closeup-vis {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: -100px;
   width: 400px;
   height: 400px;
@@ -475,7 +479,7 @@ a {
 
 #closeup-info {
   position: absolute;
-  top: 250px;
+  top: 125px;
   line-height: 1.2;
 }
 
@@ -545,15 +549,49 @@ h3 {
   background: transparent url(../img/down-arrow.svg) no-repeat 165px center;
   background-size: 20px;
   margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 #firsthead {
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 #timeline-chart {
   width: 600px;
   height: 500px;
+  fill:black;
+}
+
+.scatter-tip {
+  font-size: 12px;
+  padding:5px;
+  border-radius: 2px;
+  background-color: rgb(175,175,175);
+}
+
+.scatter-tip-title {
+  color:rgb(50,50,50);
+  font-size:14px
+}
+
+
+.spaceship-line {
+  fill: none;
+  stroke: white;
+  stroke-width: 1.5px;
+}
+
+.tooltip-circle {
+  fill: #96AB96;
+}
+
+#note {
+  font-size:14px;
+}
+
+.explanation {
+  font-size:12pt !important;
+  line-height: 1.4 !important;
 }
 .line {
   fill: none;
