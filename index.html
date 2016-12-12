@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
 
-	<title>Vertical Fixed Navigation</title>
+	<title>EXOPLANETS</title>
 </head>
 <body>
 	<nav id="cd-vertical-nav">
@@ -18,7 +18,7 @@
 			<li>
 				<a href="#section1" data-number="1">
 					<span class="cd-dot"></span>
-					<span class="cd-label">Life</span>
+					<span class="cd-label">Home</span>
 				</a>
 			</li>
 			<li>
@@ -63,7 +63,7 @@
 	</section><!-- cd-section -->
 
 	<section id="section2" class="cd-section">
-    <h2>What are Exoplanets?</h2>
+    <h2 id="firsthead">What are Exoplanets?</h2>
 		<p class="subhead">
       An exoplanet, or extrasolar planet, is a planet that orbits a star other than the Sun.
     </p>
@@ -76,21 +76,64 @@
       <video id="video2" src="https://exoplanets.nasa.gov/interactable/11/vid/transit_method_single_planet.mp4" autoplay="true" loop="true"></video>
       <p>DIMMING STARS</p>
     </div>
+    <p class="credit">Credit: <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">NASA Exoplanet Exploration</a></p>
 	</section><!-- cd-section -->
 
 	<section id="section3" class="cd-section">
-		<p class="p-center">With this and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
+    <h2>Rapid Discoveries</h2>
+		<p class="subhead">With this and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
+    <div id="timeline-chart" class="middle">
+       <button id="updateButton" class="btn bg-primary">Refresh</button>
+       <div id="slider-area"> </div>
+       <p id="event-start"></p>
+       <p id="event-end"></p>
+    </div>
 	</section><!-- cd-section -->
 
 	<section id="section4" class="cd-section">
-		<p class="p-center">Scientists have identified 10 planets that are most likely to be habitable. Here's how they compare to Earth.</p>
+    <h2>All Exoplanets</h2>
+    <p class="subhead">The physical properties of all 3313 exoplanets</p>
+    <div id="hist-vis">
+      <div class="selectors">
+        <h5>Select X-Axis Category</h5>
+        <select class="form-control select" id="scat-xCategory" onchange="histVis.wrangleData()">
+          <option value="PlanetaryMassJpt">Planetary Mass</option>
+          <option value="RadiusJpt">Planetary Radius</option>
+          <option value="PeriodDays">Orbital Period</option>
+          <option value ="SurfaceTempK">Surface Temperature</option>
+          <option value="SemiMajorAxisAU">Orbital Radius</option>
+        </select>
+      </div>
+      <div class="selectors">
+        <h5>Select Radius Category</h5>
+        <select class="form-control select" id="scat-radiusCategory" onchange="histVis.wrangleData()">
+          <option value="RadiusJpt">Planetary Radius</option>
+          <option value ="SurfaceTempK">Surface Temperature</option>
+          <option value="PeriodDays">Orbital Period</option>
+          <option value="PlanetaryMassJpt">Planetary Mass</option>
+          <option value="SemiMajorAxisAU">Orbital Radius</option>
+        </select>
+      </div>
+      <div class="selectors">
+        <h5>Select Y-Axis Category</h5>
+        <select class="form-control select" id="scat-yCategory" onchange="histVis.wrangleData()">
+          <option value ="SurfaceTempK">Surface Temperature</option>
+          <option value="RadiusJpt">Planetary Radius</option>
+          <option value="PlanetaryMassJpt">Planetary Mass</option>
+          <option value="PeriodDays">Orbital Period</option>
+          <option value="SemiMajorAxisAU">Orbital Radius</option>
+        </select>
+      </div>
+    </div>
 	</section><!-- cd-section -->
 
 	<section id="section5" class="cd-section">
     <h2>Earthlike Planets</h2>
+    <p class="subhead">Scientists have identified 10 planets that are most likely to be habitable. Here's how they compare to Earth.</p>
+
     <div class="left">
       <!-- Vis 1 ORBIT -->
-      <div id="radial-chart" class="vis1" onclick="radialChart.startStopVis()"></div>
+      <div id="radial-chart" onclick="radialChart.startStopVis()"></div>
     </div>
     <div class="right">
       <!-- <p>Scientists have identified 10 planets that are most likely to be habitable. Here's how they compare to Earth.</p> -->
@@ -105,12 +148,16 @@
           <h5 id="radius" class="closeuptext">Planetary Radius</h5>
           <h5 id="period" class="closeuptext">Orbital Period</h5>
           <h5 id="orbrad" class="closeuptext">Orbital Radius</h5>
+          <h5 id="wiki" class="closeuptext">Wiki Link</h5>
         </div>
       </div>
     </div>
 	</section><!-- cd-section -->
+  <p class="credit">Solar systems are overlaid. Planet surfaces are artistic interpretations.</a></p>
 
 	<section id="section6" class="cd-section">
+    <h2>A Long Journey</h2>
+    <p class="subhead">To reach any of these planets, we'll need to build much faster spaceships.</p>
 
   </section><!-- cd-section -->
 
@@ -127,7 +174,7 @@
 <script src="js/lib/nouislider.min.js"></script>
 
 <script src="js/vis/radial-vis.js"></script>
-<!-- <script src="js/vis/timeline-vis.js"></script> -->
+<script src="js/vis/timeline-vis.js"></script>
 <script src="js/vis/hist-vis.js"></script>
 <script src="js/vis/closeup-vis.js"></script>
 <script src="js/main.js"></script>
