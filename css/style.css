@@ -592,6 +592,8 @@ h3 {
 .explanation {
   font-size:12pt !important;
   line-height: 1.4 !important;
+  width: 90%;
+  margin: 0 auto;
 }
 .line {
   fill: none;

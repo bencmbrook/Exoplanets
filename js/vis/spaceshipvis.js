@@ -144,7 +144,7 @@ SpaceshipVis.prototype.updateVisualization = function () {
         .attr("text-anchor", "end")
         .attr("x", vis.width)
         .attr("y", 35)
-        .attr("stroke", "white")
+        .attr("fill", "white")
         .text("Distance from Earth in Parsec");
 
 
@@ -172,28 +172,28 @@ SpaceshipVis.prototype.updateVisualization = function () {
 
     //distance labels
     vis.staticDistanceText = vis.svg.append("text")
-        .attr("stroke", "coral")
-        .attr("y", 5)
+        .attr("fill", "coral")
+        .attr("y", 0)
         .attr("x", 12)
         .html("Travel time from Earth for:");
 
     vis.apolloDistanceLabel = vis.svg.append("text")
-        .attr("stroke", "white")
+        .attr("fill", "white")
         .attr("y", 25)
         .attr("x", 12)
-        .html("Apollo 11 Shuttle: ");
+        .html("Apollo 11 Shuttle (fastest manned vehicle): ");
 
     vis.junoDistanceLabel = vis.svg.append("text")
-        .attr("stroke", "white")
-        .attr("y", 45)
+        .attr("fill", "white")
+        .attr("y", 50)
         .attr("x", 12)
-        .html("Juno Satellite: ");
+        .html("Juno Satellite (fastest unmanned vehicle): ");
 
     vis.enterpriseDistanceLabel = vis.svg.append("text")
-        .attr("stroke", "white")
-        .attr("y", 65)
+        .attr("fill", "white")
+        .attr("y", 75)
         .attr("x", 12)
-        .html("Starktrek Enterprise: ");
+        .html("Startrek Enterprise (70% speed of light): ");
 
 
 
@@ -217,7 +217,7 @@ SpaceshipVis.prototype.updateVisualization = function () {
         .attr("class", "mouse-per-line");
 
     vis.mousePerLine.append("text")
-        .style("stroke", "white")
+        .style("fill", "white")
         .attr("transform", "translate(10,3)");
 
     vis.mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
@@ -271,12 +271,12 @@ SpaceshipVis.prototype.updateVisualization = function () {
                     //parsec label
                     d3.select(this).select('text')
                         .text(vis.xScale.invert(pos.x).toFixed(2) + " Parsec")
-                        .attr("transform", "translate(5," + -10 + ")");
+                        .attr("transform", "translate(5," + -15 + ")");
 
                     //update distance labels
-                    vis.apolloDistanceLabel.html("Apollo 11 Shuttle: " + vis.calculateTravelTime(vis.xScale.invert(pos.x).toFixed(2))[1] + " Years");
-                    vis.junoDistanceLabel.html("Juno Satellite: " + vis.calculateTravelTime(vis.xScale.invert(pos.x).toFixed(2))[0] + " Years");
-                    vis.enterpriseDistanceLabel.html("Starktrek Enterprise: " + vis.calculateTravelTime(vis.xScale.invert(pos.x).toFixed(2))[2] + " Years");
+                    vis.apolloDistanceLabel.html("Apollo 11 Shuttle (fastest manned vehicle):&nbsp" + vis.calculateTravelTime(vis.xScale.invert(pos.x).toFixed(2))[1] + " years");
+                    vis.junoDistanceLabel.html("Juno Satellite (fastest unmanned vehicle):&nbsp&nbsp&nbsp" + vis.calculateTravelTime(vis.xScale.invert(pos.x).toFixed(2))[0] + " years");
+                    vis.enterpriseDistanceLabel.html("Startrek Enterprise (70% of speed of light):&nbsp&nbsp" + vis.calculateTravelTime(vis.xScale.invert(pos.x).toFixed(2))[2] + " years");
 
                     return "translate(" + mouse[0] + "," + pos.y +")";
                 });
