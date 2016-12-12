@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="f7c28865-b6b6-4c53-9855-c0aac59d9114" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+=======
     <list default="true" id="d802e6a6-429c-4a82-b7bf-9d427cc69692" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/vis/timeline-vis.js" afterPath="$PROJECT_DIR$/js/vis/timeline-vis.js" />
+>>>>>>> kenny
     </list>
     <ignored path="cs171final.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,6 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+=======
       <file leaf-file-name="timeline-vis.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/vis/timeline-vis.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -50,6 +59,7 @@
       </file>
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
+>>>>>>> kenny
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -63,6 +73,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -72,6 +84,7 @@
       </list>
     </option>
   </component>
+>>>>>>> kenny
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -79,8 +92,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
+    <option name="x" value="522" />
+    <option name="y" value="98" />
+=======
     <option name="x" value="591" />
     <option name="y" value="23" />
+>>>>>>> kenny
     <option name="width" value="818" />
     <option name="height" value="873" />
   </component>
@@ -109,6 +127,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="Scratches" />
+=======
+>>>>>>> kenny
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -127,6 +150,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="cs171final" />
@@ -180,6 +211,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+>>>>>>> kenny
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
@@ -191,16 +223,34 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="f7c28865-b6b6-4c53-9855-c0aac59d9114" name="Default" comment="" />
+      <created>1481527587086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1481527587086</updated>
+      <workItem from="1481527589138" duration="569000" />
+=======
       <changelist id="d802e6a6-429c-4a82-b7bf-9d427cc69692" name="Default" comment="" />
       <created>1481565656573</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1481565656573</updated>
       <workItem from="1481565657736" duration="2993000" />
+>>>>>>> kenny
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="569000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="522" y="98" width="818" height="873" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24968633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
     <option name="totallyTimeSpent" value="2993000" />
   </component>
   <component name="ToolWindowManager">
@@ -208,6 +258,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24968633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> kenny
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -241,7 +292,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/index.html">
+=======
     <entry file="file://$PROJECT_DIR$/js/main.js">
+>>>>>>> kenny
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -249,6 +304,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -273,5 +330,6 @@
         </state>
       </provider>
     </entry>
+>>>>>>> kenny
   </component>
 </project>

@@ -32,13 +32,13 @@
 			<li>
 				<a href="#section3" data-number="3">
 					<span class="cd-dot"></span>
-					<span class="cd-label">Rapid Discoveries</span>
+					<span class="cd-label">Discovery</span>
 				</a>
 			</li>
       <li>
         <a href="#section4" data-number="4">
           <span class="cd-dot"></span>
-          <span class="cd-label">All Exoplanets</span>
+          <span class="cd-label">Exoplanet Characteristics</span>
         </a>
       </li>
 			<li>
@@ -50,7 +50,7 @@
 			<li>
 				<a href="#section6" data-number="6">
 					<span class="cd-dot"></span>
-					<span class="cd-label">A Long Journey</span>
+					<span class="cd-label">A Long Journey Ahead</span>
 				</a>
 			</li>
 		</ul>
@@ -68,22 +68,28 @@
     <h2 id="firsthead">What are Exoplanets?</h2>
 		<p class="subhead">
       An exoplanet, or extrasolar planet, is a planet that orbits a star other than the Sun.
+			<!-- To date, scientists have discovered more than 3,300 exoplanets. -->
     </p>
     <p class="subhead">
-      Astromers discover them by looking for stars that wobble or dim periodically.
+      Astronomers discover them by looking for stars that wobble or dim periodically.
     </p>
     <div class="middle">
       <video src="https://exoplanets.nasa.gov/interactable/11/vid/radial_velocity.mp4" autoplay="true" loop="true"></video>
-      <p>WOBBLING STARS</p>
+			<p class="subhead">WOBBLING STAR</p>
+      <p class="explanation">Within a solar system, planets orbit the host star due to the star's gravitational force on the planets. However, planets also
+		  exert gravitational forces on its star, causing the star to have a slight wobble.
+	  	Scientists use small variations in a star's movement to detect the presence of planets that would otherwise be invisible.</p>
       <video id="video2" src="https://exoplanets.nasa.gov/interactable/11/vid/transit_method_single_planet.mp4" autoplay="true" loop="true"></video>
-      <p>DIMMING STARS</p>
+      <p class="subhead">DIMMING STAR</p>
+      <p class="explanation">When a planet passes between a star and our telescopes, it blocks some of the star's light.
+         For a brief period of time, that star actually gets dimmer. If this dimming is repetitive, it is likely caused by an orbiting planet.</p>
     </div>
     <p class="credit">Credit: <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">NASA Exoplanet Exploration</a></p>
 	</section><!-- cd-section -->
 
 	<section id="section3" class="cd-section">
-    <h2>Rapid Discoveries</h2>
-		<p class="subhead">With this and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
+    <h2>Exoplanet Discovery is Accelerating</h2>
+		<p class="subhead">With these and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
     <div id="timeline-chart" class="middle">
        <button id="updateButton" class="btn bg-primary">Refresh</button>
         </br>
@@ -96,8 +102,8 @@
 	</section><!-- cd-section -->
 
 	<section id="section4" class="cd-section">
-    <h2>All Exoplanets</h2>
-    <p class="subhead">The physical properties of all 3313 exoplanets</p>
+    <h2>What are these planets like?</h2>
+    <p class="subhead">Use this scatterplot to explore the physical properties of all 3313 exoplanets!</p>
     <div id="hist-vis">
       <div class="selectors">
         <h5>Select X-Axis Category</h5>
@@ -132,9 +138,12 @@
     </div>
 	</section><!-- cd-section -->
 
+	<p class="credit">Note: we don't have complete data on every planet, so we only display those planets for which we have
+		all three display characteristics.</p>
+
 	<section id="section5" class="cd-section">
     <h2>Earthlike Planets</h2>
-    <p class="subhead">Scientists have identified 10 planets that are most likely to be habitable. Here's how they compare to Earth.</p>
+    <p class="subhead">Scientists have identified 10 planets that are most likely to be habitable. We've placed them in an imaginary solar system to allow for easy comparison.</p>
 
     <div class="left">
       <!-- Vis 1 ORBIT -->
@@ -147,13 +156,13 @@
         <div id="closeup-vis"></div>
         <div id="closeup-info">
           <h3 id="planetname">Earth</h3>
-          <h5 id="temperature" class="closeuptext">Temperature</h5>
-          <h5 id="perioddays" class="closeuptext">Length of Year</h5>
-          <h5 id="mass" class="closeuptext">Planetary Mass</h5>
-          <h5 id="radius" class="closeuptext">Planetary Radius</h5>
+          <h5 id="temperature" class="closeuptext">Temperature: 15C</h5>
+          <h5 id="perioddays" class="closeuptext">Length of Year: 365 days</h5>
+          <h5 id="mass" class="closeuptext">Planetary Mass: 0.003 Jupiter masses</h5>
+          <h5 id="radius" class="closeuptext">Planetary Radius: 0.091 Jupiter radii</h5>
           <h5 id="period" class="closeuptext">Orbital Period</h5>
-          <h5 id="orbrad" class="closeuptext">Orbital Radius</h5>
-          <h5 id="wiki" class="closeuptext">Wiki Link</h5>
+          <h5 id="orbrad" class="closeuptext">Orbital Radius: 1.000 AU</h5>
+          <h5 id="wiki" class="closeuptext"><a target="_target">Wiki Link: https://en.wikipedia.org/wiki/Earth</a></h5>
         </div>
       </div>
     </div>
@@ -162,8 +171,9 @@
 
 	<section id="section6" class="cd-section">
     <h2>A Long Journey</h2>
-    <p class="subhead">To reach any of these planets, we'll need to build much faster spaceships.</p>
-
+    <p class="subhead">To reach any of these planets, we'll need to build much faster spaceships. One parsec is roughly is roughly
+	equivalent to 31 trillion kilometers or 3.26 light-years.</p>
+		<div id="spaceship-area" class="middle"></div>
   </section><!-- cd-section -->
 
 <!-- Load JS libraries -->
@@ -182,15 +192,13 @@
 <script src="js/vis/timeline-vis.js"></script>
 <script src="js/vis/hist-vis.js"></script>
 <script src="js/vis/closeup-vis.js"></script>
+<script src="js/vis/spaceshipvis.js"></script>
 <script src="js/main.js"></script>
 <script src="js/theme.js"></script>
 
 <script type="text/javascript" src="plugins/sphere/requestanimationframe.polyfill.js"></script>
 <script type="text/javascript" src="plugins/jquery/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="plugins/jquery.ui/jquery-ui.min.js"></script>
-<!-- <script type="text/javascript" src="js/rotate/sphere-hacked.js"></script>
-<script type="text/javascript" src="js/rotate/jquery.earth-3d.js"></script>
-<script type="text/javascript" src="js/rotate/demo.js"></script> -->
 
 </body>
 </html>
