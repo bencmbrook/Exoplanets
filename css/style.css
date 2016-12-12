@@ -588,3 +588,7 @@ h3 {
 #note {
   font-size:14px;
 }
+
+.explanation {
+  font-size:12pt !important;
+}
