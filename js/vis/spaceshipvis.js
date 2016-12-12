@@ -260,7 +260,6 @@ SpaceshipVis.prototype.updateVisualization = function () {
                     while (true){
                         target = Math.floor((beginning + end) / 2);
                         pos = vis.lines[i].getPointAtLength(target);
-                        console.log(pos);
                         if ((target === end || target === beginning) && pos.x !== mouse[0]) {
                             break;
                         }
