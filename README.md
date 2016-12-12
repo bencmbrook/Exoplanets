@@ -1,7 +1,7 @@
 # Exoplanets: The Search for New Worlds
 ###### Ben Brook, Matt Deveney, Kenny Okagaki and Hunter Simmons
-###### Project Website:
-###### Screencast Video:
+###### Project Website: http://bencmbrook.github.io
+###### Screencast Video: 
 ###### Process Book:
 
 ### Project Overview
