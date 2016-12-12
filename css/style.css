@@ -553,7 +553,7 @@ h3 {
 }
 
 #firsthead {
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 #timeline-chart {
@@ -591,4 +591,5 @@ h3 {
 
 .explanation {
   font-size:12pt !important;
+  line-height: 1.4 !important;
 }

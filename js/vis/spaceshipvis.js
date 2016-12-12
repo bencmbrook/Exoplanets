@@ -341,7 +341,7 @@ SpaceshipVis.prototype.calculateTravelTime = function(distanceInParsec){
     var vis = this;
 
     //speeds of the different shuttles
-    var junoSpeed = .00005256;
+    var junoSpeed = 0.00005256;
     var apolloSpeed = junoSpeed/5;
     var enterpriseSpeed = 2.146;
 
@@ -353,6 +353,3 @@ SpaceshipVis.prototype.calculateTravelTime = function(distanceInParsec){
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-
-
