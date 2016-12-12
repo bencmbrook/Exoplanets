@@ -593,3 +593,35 @@ h3 {
   font-size:12pt !important;
   line-height: 1.4 !important;
 }
+.line {
+  fill: none;
+  stroke: lightgrey;
+  stroke-width: 1.5px;
+}
+.tooltip-circle {
+  fill: #96AB96;
+}
+.d3-tip {
+  line-height: 1;
+  padding: 12px;
+  background: rgba(200, 200, 200, 0.95);
+  color: rgb(50,50,50);
+  border-radius: 2px;
+}
+#slider-area {
+  width: 300px;
+  left: 25%;
+}
+#updateButton {
+  background-color: black;
+  color: white;
+  border: 2px solid #e7e7e7;
+}
+#updateButton:hover{
+  color: #96AB96;
+  border: 2px solid #96AB96;
+}
+
+
+
+

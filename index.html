@@ -8,7 +8,9 @@
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="css/nouislider.min.css">
+
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
 
 	<title>EXOPLANETS</title>
 </head>
@@ -90,7 +92,10 @@
 		<p class="subhead">With these and <a href="https://exoplanets.nasa.gov/interactable/11/" target="_blank">three new methods</a>, scientists are discovering more exoplanets than ever before.</p>
     <div id="timeline-chart" class="middle">
        <button id="updateButton" class="btn bg-primary">Refresh</button>
-       <div id="slider-area"> </div>
+        </br>
+        </br>
+        <div id="slider-area" class="noUiSlider"> </div>
+        </br>
        <p id="event-start"></p>
        <p id="event-end"></p>
     </div>
