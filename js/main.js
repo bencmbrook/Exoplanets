@@ -55,8 +55,6 @@ function loadData() {
         timelineChart.updateVisualization();
     });
 
-    var a = $('#event-start').addEventListener('onchange');
-
     $(selectionHandler).bind("selectionChanged", function(e, planet){
       closeUp.updateSelection(planet);
     });
